@@ -28,8 +28,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.vue",
-    "resolveVue.d.ts"
+    "src/**/*.vue"
   ],
   "references": [
     {
