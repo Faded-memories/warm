@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    暂无该页面
+    <el-empty description="404"/>
   </div>
 </template>
 

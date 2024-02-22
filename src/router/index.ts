@@ -42,7 +42,7 @@ router.beforeEach((to, from, next) => {
     if (to.meta.title) {
         document.title = `${to.meta.title}`;
     } else {
-        console.log(to, from)
+        // console.log(to, from)
     }
     next()
 })
