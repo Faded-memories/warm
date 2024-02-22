@@ -18,7 +18,7 @@ const params = reactive<Params>({
 const rules = reactive<FormRules<Params>>({
   account: [
     {required: true, message: '请输入账号', trigger: 'blur'},
-    {min: 3, max: 5, message: '密码长度为3-5位', trigger: 'blur'},
+    {min: 3, max: 11, message: '密码长度为3-11位', trigger: 'blur'},
   ],
   password: [
     {required: true, message: '请输入密码', trigger: 'blur'},
