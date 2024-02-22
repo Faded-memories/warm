@@ -3,7 +3,7 @@
 
 <template>
   <div class="wl-home">
-    <img src="@/assets/image/warm.jpg" alt="">
+    <img src="../../assets/image/warm.jpg" alt="">
     <p>欢迎使用warm系统</p>
   </div>
 </template>

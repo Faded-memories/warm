@@ -6,12 +6,19 @@ const mainRoutes = {
     path: "/",
     component: defineAsyncComponent(() => import('@/views/global/layout.vue')),
     name: "main",
-    redirect: {name: "home"},
+    redirect: {name: "individual"},
     children: [
         {
             path: "/home",
-            component: defineAsyncComponent(() => import('@/views/home.vue')),
+            component: defineAsyncComponent(() => import('@/views/home/home.vue')),
             name: "home",
+            meta: {title: '首页'}
+        },
+        {
+            path: "/individual",
+            component: defineAsyncComponent(() => import('@/views/individual/individual.vue')),
+            name: "individual",
+            meta: {title: '个性设置'}
         },
     ]
 }

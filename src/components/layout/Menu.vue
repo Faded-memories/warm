@@ -1,23 +1,18 @@
 <template>
   <div>
     <el-menu
-        default-active="1"
+        default-active="/home"
         class="el-menu-vertical-demo"
         :collapse="isCollapse"
         @open="handleOpen"
         @close="handleClose"
+        router
     >
-      <el-menu-item index="1">
+      <el-menu-item :index="item.path" v-for="(item,index) in routeList" :key="index">
         <el-icon>
           <icon-menu/>
         </el-icon>
-        <template #title>首页</template>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <el-icon>
-          <setting/>
-        </el-icon>
-        <template #title>个性设置</template>
+        <template #title>{{ item.title }}</template>
       </el-menu-item>
     </el-menu>
     <div class="menu-switch">
@@ -31,9 +26,19 @@
 
 <script lang="ts" setup>
 import {ref} from 'vue'
-import {Menu as IconMenu, Setting,} from '@element-plus/icons-vue'
+import {Menu as IconMenu,} from '@element-plus/icons-vue'
+import mainRoutes from "../../router/router/mainRoutes.ts"
 
 const isCollapse = ref(true)
+const list = JSON.parse(JSON.stringify(mainRoutes.children))
+const routeList = list.map((item: any) => {
+  return {
+    path: item.path,
+    title: item.meta.title,
+    children: item.children
+  }
+})
+
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
