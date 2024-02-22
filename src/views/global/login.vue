@@ -47,6 +47,7 @@ const submitForm = async (formEl: FormInstance | undefined) => {
     <StarBox
         image-url="https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/a8ec8a13632762d01fb5afdda6ec08fa503dc6cd.jpg"/>
     <div class="login-info">
+      <h2>warm 后台管理系统</h2>
       <el-form :model="params"
                ref="ruleFormRef"
                :rules="rules"
@@ -76,17 +77,25 @@ const submitForm = async (formEl: FormInstance | undefined) => {
   .login-info {
     position: absolute;
     width: 400px;
-    height: 200px;
-    top: calc(50vh - 300px / 2 - 24px);
-    left: calc(50vw - 180px - 24px);
+    height: 260px;
+    top: calc(50vh - 260px / 2 - 24px - 16px);
+    left: calc(50vw - 400px / 2 - 24px - 16px);
     box-shadow: 0 2px 4px rgba(255, 255, 255, .12), 0 0 6px rgba(255, 255, 255, .04);
-    border: 10px solid transparent;
+    border: 16px solid transparent;
     background-clip: padding-box;
     background-image: radial-gradient(ellipse at top left, rgba(181, 143, 190, 0.9) 30%, rgba(121, 186, 196, 0.6) 70%);
     padding: 24px;
     border-radius: 5px;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 400;
+      color: #f1f1f1;
+    }
   }
 }
 
@@ -99,6 +108,6 @@ const submitForm = async (formEl: FormInstance | undefined) => {
 }
 
 ::v-deep(.el-form-item__label) {
-  color: black;
+  color: #f1f1f1;
 }
 </style>
