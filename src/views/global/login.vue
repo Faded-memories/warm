@@ -4,6 +4,7 @@ import type {FormInstance, FormRules} from 'element-plus'
 import {useRouter} from "vue-router";
 import StarBox from '@/components/login/star.vue'
 
+// 数据类型
 interface Params {
   account: string
   password: string
@@ -15,6 +16,7 @@ const params = reactive<Params>({
   account: '',
   password: ''
 })
+// 信息验证规则
 const rules = reactive<FormRules<Params>>({
   account: [
     {required: true, message: '请输入账号', trigger: 'blur'},
@@ -26,10 +28,12 @@ const rules = reactive<FormRules<Params>>({
   ],
 })
 
+// 按钮禁用 (需要都输入值,否则禁用)
 const isInput = computed(() => {
   return Boolean(params.account) && Boolean(params.password)
 })
 
+// 提交验证
 const submitForm = async (formEl: FormInstance | undefined) => {
   if (!formEl) return
   await formEl.validate((valid, fields) => {
