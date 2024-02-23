@@ -13,7 +13,7 @@
         <template #title>首页</template>
       </el-menu-item>
 
-      <el-sub-menu>
+      <el-sub-menu index="5646">
         <template #title>
           <el-icon>
             <Menu/>

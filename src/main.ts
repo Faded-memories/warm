@@ -1,5 +1,6 @@
 import {createApp} from 'vue'
 import './assets/css/reset.css'
+import './assets/css/global.css'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import App from './App.vue'
@@ -11,6 +12,7 @@ let app = createApp(App);
 //绑定路由对象!!!
 app.use(router);
 app.use(ElementPlus)
+// vue3 给原型上挂载属性
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }

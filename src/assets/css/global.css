@@ -1,0 +1,8 @@
+.wl-pageHeader {
+    height: 60px;
+    box-shadow: 0 0 12px rgba(62, 154, 138, 0.2);
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
