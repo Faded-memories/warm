@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    tableVerify表格验证
+    verify验证
   </div>
 </template>
 

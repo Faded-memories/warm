@@ -16,7 +16,7 @@ const mainRoutes = {
         },
         {
             path: "/verify",
-            component: defineAsyncComponent(() => import('@/views/tool/verify/tableVerify.vue')),
+            component: defineAsyncComponent(() => import('@/views/tool/verify/verify.vue')),
             name: "tableVerify",
             meta: {title: '验证'},
         },
