@@ -27,6 +27,12 @@ const mainRoutes = {
             meta: {title: '组件'},
         },
         {
+            path: "/echarts",
+            component: defineAsyncComponent(() => import('@/views/echarts/echarts.vue')),
+            name: "echarts",
+            meta: {title: 'echarts图表'},
+        },
+        {
             path: "/individual",
             component: defineAsyncComponent(() => import('@/views/individual/individual.vue')),
             name: "individual",

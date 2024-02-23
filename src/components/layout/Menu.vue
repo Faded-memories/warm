@@ -33,7 +33,12 @@
           <template #title>组件类</template>
         </el-menu-item>
       </el-sub-menu>
-
+      <el-menu-item index="/echarts">
+        <el-icon>
+          <PieChart/>
+        </el-icon>
+        <template #title>echarts图表</template>
+      </el-menu-item>
       <el-menu-item index="/individual">
         <el-icon>
           <Setting/>
@@ -51,7 +56,7 @@
 
 <script lang="ts" setup>
 import {ref} from 'vue'
-import {Files, Filter, HomeFilled, Setting} from '@element-plus/icons-vue'
+import {Files, Filter, HomeFilled, PieChart, Setting} from '@element-plus/icons-vue'
 
 const isCollapse = ref(true)
 </script>
