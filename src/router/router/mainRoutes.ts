@@ -15,6 +15,18 @@ const mainRoutes = {
             meta: {title: '首页'}
         },
         {
+            path: "/verify",
+            component: defineAsyncComponent(() => import('@/views/tool/verify/tableVerify.vue')),
+            name: "tableVerify",
+            meta: {title: '验证'},
+        },
+        {
+            path: "/customModule",
+            component: defineAsyncComponent(() => import('@/views/tool/customModule/customModule.vue')),
+            name: "customModule",
+            meta: {title: '组件'},
+        },
+        {
             path: "/individual",
             component: defineAsyncComponent(() => import('@/views/individual/individual.vue')),
             name: "individual",

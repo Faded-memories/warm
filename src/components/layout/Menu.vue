@@ -4,47 +4,56 @@
         default-active="/home"
         class="el-menu-vertical-demo"
         :collapse="isCollapse"
-        @open="handleOpen"
-        @close="handleClose"
-        router
-    >
-      <el-menu-item :index="item.path" v-for="(item,index) in routeList" :key="index">
+        router>
+
+      <el-menu-item index="/home">
         <el-icon>
-          <icon-menu/>
+          <HomeFilled/>
         </el-icon>
-        <template #title>{{ item.title }}</template>
+        <template #title>首页</template>
+      </el-menu-item>
+
+      <el-sub-menu>
+        <template #title>
+          <el-icon>
+            <Menu/>
+          </el-icon>
+          <span>便捷工具</span>
+        </template>
+        <el-menu-item index="/verify">
+          <el-icon>
+            <Filter/>
+          </el-icon>
+          <template #title>校验类</template>
+        </el-menu-item>
+        <el-menu-item index="/customModule">
+          <el-icon>
+            <Files/>
+          </el-icon>
+          <template #title>组件类</template>
+        </el-menu-item>
+      </el-sub-menu>
+
+      <el-menu-item index="/individual">
+        <el-icon>
+          <Setting/>
+        </el-icon>
+        <template #title>个性设置</template>
       </el-menu-item>
     </el-menu>
     <div class="menu-switch">
       <el-switch
           v-model="isCollapse"
-          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #409eff"
-      />
+          style="--el-switch-on-color: #13ce66; --el-switch-off-color: #409eff"/>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import {ref} from 'vue'
-import {Menu as IconMenu,} from '@element-plus/icons-vue'
-import mainRoutes from "../../router/router/mainRoutes.ts"
+import {Files, Filter, HomeFilled, Setting} from '@element-plus/icons-vue'
 
 const isCollapse = ref(true)
-const list = JSON.parse(JSON.stringify(mainRoutes.children))
-const routeList = list.map((item: any) => {
-  return {
-    path: item.path,
-    title: item.meta.title,
-    children: item.children
-  }
-})
-
-const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
-}
 </script>
 
 <style scoped lang="scss">

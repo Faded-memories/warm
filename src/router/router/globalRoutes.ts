@@ -13,5 +13,9 @@ const globalRoutes = [
         component: defineAsyncComponent(() => import('@/views/global/login.vue')),
         name: "login",
     },
+    {
+        path: "/:pathMatch(.*)*",
+        redirect: {name: "404"},
+    },
 ];
 export default globalRoutes
