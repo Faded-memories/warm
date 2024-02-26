@@ -9,17 +9,31 @@
             </el-icon>
             百度地图
           </template>
+          <!--          基础地图-->
           <el-card>
-            <HelloWord id="HelloWord" :isFullFlag="isFullFlag" @close="setFullScreen('HelloWord')"/>
+            <BasicsMap id="BasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('BasicsMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>岳池县大石乡邮政银行!</div>
               <div>
-                <el-icon @click="setFullScreen('HelloWord')">
+                <el-icon @click="setFullScreen('BasicsMap')">
                   <FullScreen/>
                 </el-icon>
               </div>
             </div>
           </el-card>
+          <!--          地图控件-->
+          <el-card>
+            <ControlMap id="ControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('ControlMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>地图控件</div>
+              <div>
+                <el-icon @click="setFullScreen('ControlMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
+
         </el-collapse-item>
         <el-collapse-item name="2">
           <template #title>
@@ -45,7 +59,8 @@
 <script setup>
 
 import {onMounted, ref} from "vue";
-import HelloWord from "@/components/mapAttempt/baidu/HelloWord.vue";
+import BasicsMap from "@/components/mapAttempt/baidu/BasicsMap.vue";
+import ControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
 import {FullScreen, MapLocation} from "@element-plus/icons-vue";
 
 const activeName = ref('1')

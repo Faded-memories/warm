@@ -1,8 +1,8 @@
 <template>
-  <div class="HelloWord">
+  <div>
     <!-- 设置放置地图的ref -->
-    <div id="map" :class="[props.isFullFlag?'isFullFlag':'HelloWordMap']"/>
-    <el-icon class="isFullFlagClose" v-if="props.isFullFlag" @click="closeMap('HelloWord')">
+    <div id="controlMap" :class="[props.isFullFlag?'fullScreen':'mapBox']"/>
+    <el-icon class="close" v-if="props.isFullFlag" @click="emit('close', 'ControlMap')">
       <CloseBold/>
     </el-icon>
   </div>
@@ -18,7 +18,7 @@ const emit = defineEmits(['close'])
 let BMap = null;
 onMounted(() => {
   BMap = window.BMap;
-  let map = new BMap.Map("map"); // 创建地图实例
+  let map = new BMap.Map("controlMap"); // 创建地图实例
   let point = new BMap.Point(106.520527, 30.522224); // 创建点坐标
   map.centerAndZoom(point, 15); // 初始化地图，设置中心点坐标和地图级别
   map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
@@ -26,24 +26,21 @@ onMounted(() => {
   map.addOverlay(marker); // 将标注添加到地图中
   map.openInfoWindow(map.getCenter()); // 打开信息窗口
 });
-const closeMap = (id) => {
-  emit('close', id)
-}
 </script>
 
 <style scoped lang="scss">
-.isFullFlag {
+.fullScreen {
   width: 100vw;
   height: 100vh;
   transition: width 0.5s linear;
 }
 
-.HelloWordMap {
+.mapBox {
   width: 300px;
   height: 300px;
 }
 
-.isFullFlagClose {
+.close {
   position: fixed;
   top: 20px;
   right: 20px;
