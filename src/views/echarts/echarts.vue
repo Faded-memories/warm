@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import BarChart from "@/components/echarts/BarChart.vue";
 import {ref} from "vue";
+import BarChart from "@/components/echarts/BarChart.vue";
+import GisMap from "@/components/echarts/GisMap.vue";
 
 const barVisible = ref(false)
 const gisMapVisible = ref(false)
@@ -25,7 +26,7 @@ const activeName = ref('1')
       <BarChart v-if="barVisible"/>
     </el-dialog>
     <el-dialog v-model="gisMapVisible" title="GisMap" width="900">
-      <!--      <GisMap v-if="gisMapVisible"/>-->
+            <GisMap v-if="gisMapVisible"/>
     </el-dialog>
   </div>
 </template>

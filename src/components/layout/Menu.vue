@@ -32,6 +32,12 @@
           </el-icon>
           <template #title>组件类</template>
         </el-menu-item>
+        <el-menu-item index="/mapAttempt">
+          <el-icon>
+            <Files/>
+          </el-icon>
+          <template #title>百度地图</template>
+        </el-menu-item>
       </el-sub-menu>
       <el-menu-item index="/echarts">
         <el-icon>

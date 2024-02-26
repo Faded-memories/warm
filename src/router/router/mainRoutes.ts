@@ -27,6 +27,12 @@ const mainRoutes = {
             meta: {title: '组件'},
         },
         {
+            path: "/mapAttempt",
+            component: defineAsyncComponent(() => import('@/views/tool/mapAttempt/mapAttempt.vue')),
+            name: "mapAttempt",
+            meta: {title: '百度地图'},
+        },
+        {
             path: "/echarts",
             component: defineAsyncComponent(() => import('@/views/echarts/echarts.vue')),
             name: "echarts",
