@@ -33,6 +33,18 @@
               </div>
             </div>
           </el-card>
+          <!--          个性地图-->
+          <el-card>
+            <IndividualMap id="IndividualMap" :isFullFlag="isFullFlag" @close="setFullScreen('IndividualMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>个性地图</div>
+              <div>
+                <el-icon @click="setFullScreen('IndividualMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
 
         </el-collapse-item>
         <el-collapse-item name="2">
@@ -59,10 +71,11 @@
 <script setup>
 
 import {onMounted, ref} from "vue";
-import BasicsMap from "@/components/mapAttempt/baidu/BasicsMap.vue";
-import ControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
 import {FullScreen, MapLocation} from "@element-plus/icons-vue";
 import screenfull from 'screenfull'
+import BasicsMap from "@/components/mapAttempt/baidu/BasicsMap.vue";
+import ControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
+import IndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";
 
 const activeName = ref('1')
 const isFullFlag = ref(false)
