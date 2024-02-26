@@ -62,6 +62,7 @@ import {onMounted, ref} from "vue";
 import BasicsMap from "@/components/mapAttempt/baidu/BasicsMap.vue";
 import ControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
 import {FullScreen, MapLocation} from "@element-plus/icons-vue";
+import screenfull from 'screenfull'
 
 const activeName = ref('1')
 const isFullFlag = ref(false)
@@ -79,7 +80,7 @@ const setFullScreen = (id) => {
 onMounted(() => {
   // 监听页面全屏
   window.addEventListener("fullscreenchange", (e) => {
-    isFullFlag.value = screenfull.value.isFullscreen
+    isFullFlag.value = Boolean(screenfull.element)
   })
 });
 </script>
