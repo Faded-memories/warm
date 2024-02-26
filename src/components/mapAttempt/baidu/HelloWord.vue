@@ -27,7 +27,7 @@ onMounted(() => {
   map.openInfoWindow(map.getCenter()); // 打开信息窗口
 });
 const closeMap = (id) => {
-  emit('close',id)
+  emit('close', id)
 }
 </script>
 
@@ -35,6 +35,7 @@ const closeMap = (id) => {
 .isFullFlag {
   width: 100vw;
   height: 100vh;
+  transition: width 0.5s linear;
 }
 
 .HelloWordMap {
@@ -47,6 +48,7 @@ const closeMap = (id) => {
   top: 20px;
   right: 20px;
 }
+
 .el-icon {
   cursor: pointer;
 }
