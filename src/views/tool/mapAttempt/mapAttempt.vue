@@ -2,7 +2,13 @@
   <div class="wl-map">
     <div class="wl-echarts-content">
       <el-collapse v-model="activeName" accordion>
-        <el-collapse-item title="百度地图" name="1">
+        <el-collapse-item name="1">
+          <template #title>
+            <el-icon style="margin-right: 6px">
+              <MapLocation/>
+            </el-icon>
+            百度地图
+          </template>
           <el-card>
             <HelloWord id="HelloWord" :isFullFlag="isFullFlag" @close="setFullScreen('HelloWord')"/>
             <div style="padding: 14px" class="wl-map-hint">
@@ -15,6 +21,22 @@
             </div>
           </el-card>
         </el-collapse-item>
+        <el-collapse-item name="2">
+          <template #title>
+            <el-icon style="margin-right: 6px">
+              <MapLocation/>
+            </el-icon>
+            高德地图
+          </template>
+        </el-collapse-item>
+        <el-collapse-item name="3">
+          <template #title>
+            <el-icon style="margin-right: 6px">
+              <MapLocation/>
+            </el-icon>
+            腾讯地图
+          </template>
+        </el-collapse-item>
       </el-collapse>
     </div>
   </div>
@@ -24,7 +46,7 @@
 
 import {onMounted, ref} from "vue";
 import HelloWord from "@/components/mapAttempt/baidu/HelloWord.vue";
-import {FullScreen} from "@element-plus/icons-vue";
+import {FullScreen, MapLocation} from "@element-plus/icons-vue";
 
 const activeName = ref('1')
 const isFullFlag = ref(false)
