@@ -15,7 +15,6 @@ import {CloseBold} from "@element-plus/icons-vue";
 
 const props = defineProps(['isFullFlag'])
 const emit = defineEmits(['close'])
-const htmlData = ref("")
 function initMap() {
   let individualMap = new BMapGL.Map('individualMap'); // 创建Map实例
   let point = new BMapGL.Point(106.520527, 30.522224); // 创建点坐标
