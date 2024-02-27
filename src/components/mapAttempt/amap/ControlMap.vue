@@ -32,11 +32,11 @@ const initMap = () => {
           viewMode: "3D", // 是否为3D地图模式
           zoom: 15, // 初始化地图级别
           center: [106.513589, 30.516474], // 初始化地图中心点位置
+          layers: [new AMap.TileLayer.Satellite()],
         });
         map.addControl(new AMap.Scale()); //添加工具条插件到页面
         map.addControl(new AMap.ElasticMarker()); //添加工具条插件到页面
         map.addControl(new AMap.ToolBar()); //添加工具条插件到页面
-        map.addControl(new AMap.HawkEye()); //添加工具条插件到页面
         map.addControl(new AMap.ControlBar()); //添加工具条插件到页面
         map.addControl(new AMap.Geolocation()); //添加工具条插件到页面
         map.addControl(new AMap.AutoComplete()); //添加工具条插件到页面
