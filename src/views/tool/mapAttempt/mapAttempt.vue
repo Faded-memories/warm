@@ -23,11 +23,11 @@
           </el-card>
           <!--          地图控件-->
           <el-card>
-            <BaiDuControlMap id="ControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('ControlMap')"/>
+            <BaiDuControlMap id="BaiDuControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('BaiDuControlMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>地图控件</div>
               <div>
-                <el-icon @click="setFullScreen('ControlMap')">
+                <el-icon @click="setFullScreen('BaiDuControlMap')">
                   <FullScreen/>
                 </el-icon>
               </div>
@@ -35,11 +35,11 @@
           </el-card>
           <!--          卫星地图-->
           <el-card>
-            <BaiDuSatelliteMap id="SatelliteMap" :isFullFlag="isFullFlag" @close="setFullScreen('SatelliteMap')"/>
+            <BaiDuSatelliteMap id="BaiDuSatelliteMap" :isFullFlag="isFullFlag" @close="setFullScreen('BaiDuSatelliteMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>卫星地图</div>
               <div>
-                <el-icon @click="setFullScreen('SatelliteMap')">
+                <el-icon @click="setFullScreen('BaiDuSatelliteMap')">
                   <FullScreen/>
                 </el-icon>
               </div>
@@ -47,11 +47,11 @@
           </el-card>
           <!--          个性地图-->
           <el-card>
-            <BaiDuIndividualMap id="IndividualMap" :isFullFlag="isFullFlag" @close="setFullScreen('IndividualMap')"/>
+            <BaiDuIndividualMap id="BaiDuIndividualMap" :isFullFlag="isFullFlag" @close="setFullScreen('BaiDuIndividualMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>个性地图</div>
               <div>
-                <el-icon @click="setFullScreen('IndividualMap')">
+                <el-icon @click="setFullScreen('BaiDuIndividualMap')">
                   <FullScreen/>
                 </el-icon>
               </div>
@@ -59,11 +59,11 @@
           </el-card>
           <!--          路线规划-->
           <el-card>
-            <BaiDuPathMap id="PathMap" :isFullFlag="isFullFlag" @close="setFullScreen('PathMap')"/>
+            <BaiDuPathMap id="BaiDuPathMap" :isFullFlag="isFullFlag" @close="setFullScreen('BaiDuPathMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>路线规划</div>
               <div>
-                <el-icon @click="setFullScreen('PathMap')">
+                <el-icon @click="setFullScreen('BaiDuPathMap')">
                   <FullScreen/>
                 </el-icon>
               </div>
@@ -71,7 +71,7 @@
           </el-card>
           <!--          成都地铁-->
           <el-card>
-            <BaiDuSubwayMap id="SubwayMap" :isFullFlag="isFullFlag" @close="setFullScreen('SubwayMap')"/>
+            <BaiDuSubwayMap id="BaiDuSubwayMap" :isFullFlag="isFullFlag" @close="setFullScreen('BaiDuSubwayMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>成都地铁</div>
               <div></div>
@@ -92,6 +92,30 @@
               <div>岳池县大石乡邮政银行!</div>
               <div>
                 <el-icon @click="setFullScreen('AMapBasicsMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
+          <!--          地图控件-->
+          <el-card>
+            <AMapControlMap id="AMapControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapControlMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>地图控件</div>
+              <div>
+                <el-icon @click="setFullScreen('AMapControlMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
+          <!--          卫星地图-->
+          <el-card>
+            <AMapSatelliteMap id="AMapSatelliteMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapSatelliteMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>卫星地图</div>
+              <div>
+                <el-icon @click="setFullScreen('AMapSatelliteMap')">
                   <FullScreen/>
                 </el-icon>
               </div>
@@ -119,8 +143,10 @@ import screenfull from 'screenfull'
 import BaiDuBasicsMap from "@/components/mapAttempt/baidu/BasicsMap.vue";
 import AMapBasicsMap from "@/components/mapAttempt/amap/BasicsMap.vue";
 import BaiDuControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
+import AMapControlMap from "@/components/mapAttempt/amap/ControlMap.vue";
 import BaiDuIndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";
 import BaiDuSatelliteMap from "@/components/mapAttempt/baidu/SatelliteMap.vue";
+import AMapSatelliteMap from "@/components/mapAttempt/amap/SatelliteMap.vue";
 import BaiDuPathMap from "@/components/mapAttempt/baidu/PathMap.vue";
 import BaiDuSubwayMap from "@/components/mapAttempt/baidu/SubwayMap.vue";
 

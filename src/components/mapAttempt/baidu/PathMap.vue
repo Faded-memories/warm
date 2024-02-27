@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- 设置放置地图的ref -->
-    <div id="pathMap" :class="[props.isFullFlag?'fullScreen':'mapBox']"/>
-    <el-icon class="close" v-if="props.isFullFlag" @click="emit('close', 'PathMap')">
+    <div id="baiDuPathMap" :class="[props.isFullFlag?'fullScreen':'mapBox']"/>
+    <el-icon class="close" v-if="props.isFullFlag" @click="emit('close', 'BaiDuPathMap')">
       <CloseBold/>
     </el-icon>
 
@@ -17,11 +17,11 @@ const props = defineProps(['isFullFlag'])
 const emit = defineEmits(['close'])
 
 function initMap() {
-  let pathMap = new BMapGL.Map('pathMap'); // 创建Map实例
-  pathMap.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
-  let driving = new BMapGL.DrivingRouteLine(pathMap, {
+  let BaiDuPathMap = new BMapGL.Map('baiDuPathMap'); // 创建Map实例
+  BaiDuPathMap.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
+  let driving = new BMapGL.DrivingRouteLine(BaiDuPathMap, {
     renderOptions: {
-      map: pathMap,
+      map: BaiDuPathMap,
       autoViewport: true,
       enableDragging: true,
     }
