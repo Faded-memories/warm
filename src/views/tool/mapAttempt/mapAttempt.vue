@@ -11,11 +11,11 @@
           </template>
           <!--          基础地图-->
           <el-card>
-            <BasicsMap id="BasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('BasicsMap')"/>
+            <BaiDuBasicsMap id="BaiDuBasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('BaiDuBasicsMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>岳池县大石乡邮政银行!</div>
               <div>
-                <el-icon @click="setFullScreen('BasicsMap')">
+                <el-icon @click="setFullScreen('BaiDuBasicsMap')">
                   <FullScreen/>
                 </el-icon>
               </div>
@@ -23,7 +23,7 @@
           </el-card>
           <!--          地图控件-->
           <el-card>
-            <ControlMap id="ControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('ControlMap')"/>
+            <BaiDuControlMap id="ControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('ControlMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>地图控件</div>
               <div>
@@ -35,7 +35,7 @@
           </el-card>
           <!--          卫星地图-->
           <el-card>
-            <SatelliteMap id="SatelliteMap" :isFullFlag="isFullFlag" @close="setFullScreen('SatelliteMap')"/>
+            <BaiDuSatelliteMap id="SatelliteMap" :isFullFlag="isFullFlag" @close="setFullScreen('SatelliteMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>卫星地图</div>
               <div>
@@ -47,7 +47,7 @@
           </el-card>
           <!--          个性地图-->
           <el-card>
-            <IndividualMap id="IndividualMap" :isFullFlag="isFullFlag" @close="setFullScreen('IndividualMap')"/>
+            <BaiDuIndividualMap id="IndividualMap" :isFullFlag="isFullFlag" @close="setFullScreen('IndividualMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>个性地图</div>
               <div>
@@ -59,7 +59,7 @@
           </el-card>
           <!--          路线规划-->
           <el-card>
-            <PathMap id="PathMap" :isFullFlag="isFullFlag" @close="setFullScreen('PathMap')"/>
+            <BaiDuPathMap id="PathMap" :isFullFlag="isFullFlag" @close="setFullScreen('PathMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>路线规划</div>
               <div>
@@ -71,7 +71,7 @@
           </el-card>
           <!--          成都地铁-->
           <el-card>
-            <SubwayMap id="SubwayMap" :isFullFlag="isFullFlag" @close="setFullScreen('SubwayMap')"/>
+            <BaiDuSubwayMap id="SubwayMap" :isFullFlag="isFullFlag" @close="setFullScreen('SubwayMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>成都地铁</div>
               <div></div>
@@ -85,6 +85,18 @@
             </el-icon>
             高德地图
           </template>
+          <!--          基础地图-->
+          <el-card>
+            <AMapBasicsMap id="AMapBasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapBasicsMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>岳池县大石乡邮政银行!</div>
+              <div>
+                <el-icon @click="setFullScreen('AMapBasicsMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
         </el-collapse-item>
         <el-collapse-item name="3">
           <template #title>
@@ -104,14 +116,15 @@
 import {onMounted, ref} from "vue";
 import {FullScreen, MapLocation} from "@element-plus/icons-vue";
 import screenfull from 'screenfull'
-import BasicsMap from "@/components/mapAttempt/baidu/BasicsMap.vue";
-import ControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
-import IndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";
-import SatelliteMap from "@/components/mapAttempt/baidu/SatelliteMap.vue";
-import PathMap from "@/components/mapAttempt/baidu/PathMap.vue";
-import SubwayMap from "@/components/mapAttempt/baidu/SubwayMap.vue";
+import BaiDuBasicsMap from "@/components/mapAttempt/baidu/BasicsMap.vue";
+import AMapBasicsMap from "@/components/mapAttempt/amap/BasicsMap.vue";
+import BaiDuControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
+import BaiDuIndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";
+import BaiDuSatelliteMap from "@/components/mapAttempt/baidu/SatelliteMap.vue";
+import BaiDuPathMap from "@/components/mapAttempt/baidu/PathMap.vue";
+import BaiDuSubwayMap from "@/components/mapAttempt/baidu/SubwayMap.vue";
 
-const activeName = ref('1')
+const activeName = ref('2')
 const isFullFlag = ref(false)
 const fullFlagName = ref('')
 const setFullScreen = (id) => {

@@ -7,7 +7,6 @@ import App from './App.vue'
 import router from './router'
 // 如果您正在使用CDN引入，请删除下面一行。
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-
 let app = createApp(App);
 //绑定路由对象!!!
 app.use(router);

@@ -30,6 +30,7 @@ import Menu from "@/components/layout/Menu.vue"
     .pageContainer {
       flex: 1;
       max-height: calc(100vh - 60px);
+      overflow-y: auto;
     }
   }
 }

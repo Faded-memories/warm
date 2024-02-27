@@ -2,7 +2,7 @@
   <div>
     <!-- 设置放置地图的ref -->
     <div id="basicsMap" :class="[props.isFullFlag?'fullScreen':'mapBox']"/>
-    <el-icon class="close" v-if="props.isFullFlag" @click="emit('close', 'BasicsMap')">
+    <el-icon class="close" v-if="props.isFullFlag" @click="emit('close', 'BaiDuBasicsMap')">
       <CloseBold/>
     </el-icon>
   </div>
