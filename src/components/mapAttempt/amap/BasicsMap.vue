@@ -15,7 +15,7 @@ const props = defineProps(['isFullFlag'])
 const emit = defineEmits(['close'])
 import AMapLoader from "@amap/amap-jsapi-loader";
 
-let map = null;
+let marker,map = null;
 
 onMounted(() => {
   AMapLoader.load({
@@ -30,6 +30,12 @@ onMounted(() => {
           zoom: 15, // 初始化地图级别
           center: [106.513589,30.516474], // 初始化地图中心点位置
         });
+        marker = new AMap.Marker({
+          icon: "//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-red.png",
+          position: [106.513589,30.516474],
+          offset: new AMap.Pixel(-13, -30)
+        });
+        marker.setMap(map);
       })
       .catch((e) => {
         console.log(e);
