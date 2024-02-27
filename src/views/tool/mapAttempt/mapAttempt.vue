@@ -74,8 +74,7 @@
             <SubwayMap id="SubwayMap" :isFullFlag="isFullFlag" @close="setFullScreen('SubwayMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>成都地铁</div>
-              <div>
-              </div>
+              <div></div>
             </div>
           </el-card>
         </el-collapse-item>
