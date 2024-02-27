@@ -33,6 +33,18 @@
               </div>
             </div>
           </el-card>
+          <!--          卫星地图-->
+          <el-card>
+            <SatelliteMap id="SatelliteMap" :isFullFlag="isFullFlag" @close="setFullScreen('SatelliteMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>卫星地图</div>
+              <div>
+                <el-icon @click="setFullScreen('SatelliteMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
           <!--          个性地图-->
           <el-card>
             <IndividualMap id="IndividualMap" :isFullFlag="isFullFlag" @close="setFullScreen('IndividualMap')"/>
@@ -45,7 +57,27 @@
               </div>
             </div>
           </el-card>
-
+          <!--          路线规划-->
+          <el-card>
+            <PathMap id="PathMap" :isFullFlag="isFullFlag" @close="setFullScreen('PathMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>路线规划</div>
+              <div>
+                <el-icon @click="setFullScreen('PathMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
+          <!--          成都地铁-->
+          <el-card>
+            <SubwayMap id="SubwayMap" :isFullFlag="isFullFlag" @close="setFullScreen('SubwayMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>成都地铁</div>
+              <div>
+              </div>
+            </div>
+          </el-card>
         </el-collapse-item>
         <el-collapse-item name="2">
           <template #title>
@@ -76,6 +108,9 @@ import screenfull from 'screenfull'
 import BasicsMap from "@/components/mapAttempt/baidu/BasicsMap.vue";
 import ControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
 import IndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";
+import SatelliteMap from "@/components/mapAttempt/baidu/SatelliteMap.vue";
+import PathMap from "@/components/mapAttempt/baidu/PathMap.vue";
+import SubwayMap from "@/components/mapAttempt/baidu/SubwayMap.vue";
 
 const activeName = ref('1')
 const isFullFlag = ref(false)
@@ -132,10 +167,11 @@ onMounted(() => {
 
 ::v-deep(.el-collapse-item__content) {
   display: flex;
+  flex-wrap: wrap;
 }
 
 ::v-deep(.el-card) {
-  margin: 0 12px;
+  margin: 0 28px 28px 28px;
 }
 
 .el-icon {
