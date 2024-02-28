@@ -189,7 +189,7 @@ import AMapPathMap from "@/components/mapAttempt/amap/PathMap.vue";
 import BaiDuSubwayMap from "@/components/mapAttempt/baidu/SubwayMap.vue";
 import AMapPracticalMap from "@/components/mapAttempt/amap/PracticalMap.vue";
 
-const activeName = ref('2')
+const activeName = ref('3')
 const isFullFlag = ref(false)
 const fullFlagName = ref('')
 const setFullScreen = (id) => {
