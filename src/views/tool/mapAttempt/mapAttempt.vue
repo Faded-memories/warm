@@ -89,7 +89,7 @@
           </template>
           <!--          基础地图-->
           <el-card>
-            <AMapBasicsMap id="AMapBasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapBasicsMap')"/>
+            <AMapBasicsMap id="AMapBasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapBasicsMap')"  v-if="Number(activeName) === 2"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>岳池县大石乡邮政银行!</div>
               <div>
@@ -101,7 +101,7 @@
           </el-card>
           <!--          地图控件-->
           <el-card>
-            <AMapControlMap id="AMapControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapControlMap')"/>
+            <AMapControlMap id="AMapControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapControlMap')" v-if="Number(activeName) === 2"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>地图控件</div>
               <div>
@@ -114,7 +114,7 @@
           <!--          卫星地图-->
           <el-card>
             <AMapSatelliteMap id="AMapSatelliteMap" :isFullFlag="isFullFlag"
-                               @close="setFullScreen('AMapSatelliteMap')"/>
+                              @close="setFullScreen('AMapSatelliteMap')" v-if="Number(activeName) === 2"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>卫星地图</div>
               <div>
@@ -127,7 +127,7 @@
           <!--          个性地图-->
           <el-card>
             <AMapIndividualMap id="AMapIndividualMap" :isFullFlag="isFullFlag"
-                              @close="setFullScreen('AMapIndividualMap')"/>
+                               @close="setFullScreen('AMapIndividualMap')" v-if="Number(activeName) === 2"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>个性地图</div>
               <div>
@@ -139,7 +139,7 @@
           </el-card>
           <!--          路线规划-->
           <el-card>
-            <AMapPathMap id="AMapPathMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapPathMap')"/>
+            <AMapPathMap id="AMapPathMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapPathMap')" v-if="Number(activeName) === 2"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>路线规划</div>
               <div>
@@ -151,7 +151,8 @@
           </el-card>
           <!--          路面实况-->
           <el-card>
-            <AMapPracticalMap id="AMapPracticalMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapPracticalMap')"/>
+            <AMapPracticalMap id="AMapPracticalMap" :isFullFlag="isFullFlag"
+                              @close="setFullScreen('AMapPracticalMap')" v-if="Number(activeName) === 2"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>成都地铁</div>
               <div></div>
