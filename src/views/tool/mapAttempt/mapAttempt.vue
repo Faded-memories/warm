@@ -35,7 +35,8 @@
           </el-card>
           <!--          卫星地图-->
           <el-card>
-            <BaiDuSatelliteMap id="BaiDuSatelliteMap" :isFullFlag="isFullFlag" @close="setFullScreen('BaiDuSatelliteMap')"/>
+            <BaiDuSatelliteMap id="BaiDuSatelliteMap" :isFullFlag="isFullFlag"
+                               @close="setFullScreen('BaiDuSatelliteMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>卫星地图</div>
               <div>
@@ -47,7 +48,8 @@
           </el-card>
           <!--          个性地图-->
           <el-card>
-            <BaiDuIndividualMap id="BaiDuIndividualMap" :isFullFlag="isFullFlag" @close="setFullScreen('BaiDuIndividualMap')"/>
+            <BaiDuIndividualMap id="BaiDuIndividualMap" :isFullFlag="isFullFlag"
+                                @close="setFullScreen('BaiDuIndividualMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>个性地图</div>
               <div>
@@ -111,11 +113,25 @@
           </el-card>
           <!--          卫星地图-->
           <el-card>
-            <AMapSatelliteMap id="AMapSatelliteMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapSatelliteMap')"/>
+            <AMapSatelliteMap id="AMapSatelliteMap" :isFullFlag="isFullFlag"
+                               @close="setFullScreen('AMapSatelliteMap')"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>卫星地图</div>
               <div>
                 <el-icon @click="setFullScreen('AMapSatelliteMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
+          <!--          个性地图-->
+          <el-card>
+            <AMapIndividualMap id="AMapIndividualMap" :isFullFlag="isFullFlag"
+                              @close="setFullScreen('AMapIndividualMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>个性地图</div>
+              <div>
+                <el-icon @click="setFullScreen('AMapIndividualMap')">
                   <FullScreen/>
                 </el-icon>
               </div>
@@ -145,6 +161,7 @@ import AMapBasicsMap from "@/components/mapAttempt/amap/BasicsMap.vue";
 import BaiDuControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
 import AMapControlMap from "@/components/mapAttempt/amap/ControlMap.vue";
 import BaiDuIndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";
+import AMapIndividualMap from "@/components/mapAttempt/amap/IndividualMap.vue";
 import BaiDuSatelliteMap from "@/components/mapAttempt/baidu/SatelliteMap.vue";
 import AMapSatelliteMap from "@/components/mapAttempt/amap/SatelliteMap.vue";
 import BaiDuPathMap from "@/components/mapAttempt/baidu/PathMap.vue";
