@@ -137,6 +137,18 @@
               </div>
             </div>
           </el-card>
+          <!--          路线规划-->
+          <el-card>
+            <AMapPathMap id="AMapPathMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapPathMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>路线规划</div>
+              <div>
+                <el-icon @click="setFullScreen('AMapPathMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
         </el-collapse-item>
         <el-collapse-item name="3">
           <template #title>
@@ -165,6 +177,7 @@ import AMapIndividualMap from "@/components/mapAttempt/amap/IndividualMap.vue";
 import BaiDuSatelliteMap from "@/components/mapAttempt/baidu/SatelliteMap.vue";
 import AMapSatelliteMap from "@/components/mapAttempt/amap/SatelliteMap.vue";
 import BaiDuPathMap from "@/components/mapAttempt/baidu/PathMap.vue";
+import AMapPathMap from "@/components/mapAttempt/amap/PathMap.vue";
 import BaiDuSubwayMap from "@/components/mapAttempt/baidu/SubwayMap.vue";
 
 const activeName = ref('2')
