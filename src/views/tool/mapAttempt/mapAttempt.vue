@@ -149,6 +149,14 @@
               </div>
             </div>
           </el-card>
+          <!--          路面实况-->
+          <el-card>
+            <AMapPracticalMap id="AMapPracticalMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapPracticalMap')"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>成都地铁</div>
+              <div></div>
+            </div>
+          </el-card>
         </el-collapse-item>
         <el-collapse-item name="3">
           <template #title>
@@ -179,6 +187,7 @@ import AMapSatelliteMap from "@/components/mapAttempt/amap/SatelliteMap.vue";
 import BaiDuPathMap from "@/components/mapAttempt/baidu/PathMap.vue";
 import AMapPathMap from "@/components/mapAttempt/amap/PathMap.vue";
 import BaiDuSubwayMap from "@/components/mapAttempt/baidu/SubwayMap.vue";
+import AMapPracticalMap from "@/components/mapAttempt/amap/PracticalMap.vue";
 
 const activeName = ref('2')
 const isFullFlag = ref(false)
