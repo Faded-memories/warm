@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- 设置放置地图的ref -->
-    <div id="qqControlMap" :class="[props.isFullFlag?'fullScreen':'mapBox']"/>
-    <el-icon class="close" v-if="props.isFullFlag" @click="emit('close', 'QqControlMap')">
+    <div id="qqSatelliteMap" :class="[props.isFullFlag?'fullScreen':'mapBox']"/>
+    <el-icon class="close" v-if="props.isFullFlag" @click="emit('close', 'QqSatelliteMap')">
       <CloseBold/>
     </el-icon>
   </div>
@@ -19,9 +19,9 @@ let map = null;
 function initMap() {
   //定义地图中心点坐标
   //定义map变量，调用 TMap.Map() 构造函数创建地图
-  map = new TMap.Map(document.getElementById('qqControlMap'), {
+  map = new TMap.Map(document.getElementById('qqSatelliteMap'), {
     center: new TMap.LatLng(30.51658, 106.513349),//设置地图中心点坐标
-    zoom: 16,   //设置地图缩放级别
+    zoom: 3,   //设置地图缩放级别
     baseMap: {  // 设置卫星地图
       type: 'satellite'
     }

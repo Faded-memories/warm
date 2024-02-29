@@ -190,6 +190,19 @@
               </div>
             </div>
           </el-card>
+          <!--          卫星地图-->
+          <el-card>
+            <QqSatelliteMap id="QqSatelliteMap" :isFullFlag="isFullFlag"
+                              @close="setFullScreen('QqSatelliteMap')" v-if="Number(activeName) === 3"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>卫星地图</div>
+              <div>
+                <el-icon @click="setFullScreen('QqSatelliteMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
         </el-collapse-item>
       </el-collapse>
     </div>
@@ -207,13 +220,15 @@ import QqBasicsMap from "@/components/mapAttempt/qq/BasicsMap.vue";
 import BaiDuControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
 import AMapControlMap from "@/components/mapAttempt/amap/ControlMap.vue";
 import QqControlMap from "@/components/mapAttempt/qq/ControlMap.vue";
-
 import BaiDuIndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";
 import AMapIndividualMap from "@/components/mapAttempt/amap/IndividualMap.vue";
+
 import BaiDuSatelliteMap from "@/components/mapAttempt/baidu/SatelliteMap.vue";
 import AMapSatelliteMap from "@/components/mapAttempt/amap/SatelliteMap.vue";
+import QqSatelliteMap from "@/components/mapAttempt/qq/SatelliteMap.vue";
 import BaiDuPathMap from "@/components/mapAttempt/baidu/PathMap.vue";
 import AMapPathMap from "@/components/mapAttempt/amap/PathMap.vue";
+
 import BaiDuSubwayMap from "@/components/mapAttempt/baidu/SubwayMap.vue";
 import AMapPracticalMap from "@/components/mapAttempt/amap/PracticalMap.vue";
 
