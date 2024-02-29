@@ -221,6 +221,19 @@
               </div>
             </div>
           </el-card>
+          <!--          路线规划-->
+          <el-card>
+            <QqPathMap id="QqPathMap" :isFullFlag="isFullFlag" @close="setFullScreen('QqPathMap')"
+                         v-if="Number(activeName) === 3"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>路线规划</div>
+              <div>
+                <el-icon @click="setFullScreen('QqPathMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
         </el-collapse-item>
       </el-collapse>
     </div>
@@ -246,7 +259,7 @@ import AMapSatelliteMap from "@/components/mapAttempt/amap/SatelliteMap.vue";
 import QqSatelliteMap from "@/components/mapAttempt/qq/SatelliteMap.vue";
 import BaiDuPathMap from "@/components/mapAttempt/baidu/PathMap.vue";
 import AMapPathMap from "@/components/mapAttempt/amap/PathMap.vue";
-
+import QqPathMap from "@/components/mapAttempt/qq/PathMap.vue";
 import BaiDuSubwayMap from "@/components/mapAttempt/baidu/SubwayMap.vue";
 import AMapPracticalMap from "@/components/mapAttempt/amap/PracticalMap.vue";
 
