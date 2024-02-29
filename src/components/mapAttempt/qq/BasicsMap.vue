@@ -18,7 +18,7 @@ let map = null;
 
 function initMap() {
   //定义地图中心点坐标
-  let center = new TMap.LatLng(39.984120, 116.307484)
+  let center = new TMap.LatLng(30.51658,106.513349)
   //定义map变量，调用 TMap.Map() 构造函数创建地图
   map = new TMap.Map(document.getElementById('qqBasicsMap'), {
     center: center,//设置地图中心点坐标
