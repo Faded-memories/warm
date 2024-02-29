@@ -26,6 +26,9 @@ function initMap() {
       type: 'satellite'
     }
   });
+  map.removeControl(TMap.constants.DEFAULT_CONTROL_ID.SCALE)
+  map.removeControl(TMap.constants.DEFAULT_CONTROL_ID.ZOOM)
+  map.removeControl(TMap.constants.DEFAULT_CONTROL_ID.ROTATION)
 }
 
 onMounted(() => {
