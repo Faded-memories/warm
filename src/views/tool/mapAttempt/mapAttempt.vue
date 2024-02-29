@@ -89,7 +89,8 @@
           </template>
           <!--          基础地图-->
           <el-card>
-            <AMapBasicsMap id="AMapBasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapBasicsMap')"  v-if="Number(activeName) === 2"/>
+            <AMapBasicsMap id="AMapBasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapBasicsMap')"
+                           v-if="Number(activeName) === 2"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>岳池县大石乡邮政银行!</div>
               <div>
@@ -101,7 +102,8 @@
           </el-card>
           <!--          地图控件-->
           <el-card>
-            <AMapControlMap id="AMapControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapControlMap')" v-if="Number(activeName) === 2"/>
+            <AMapControlMap id="AMapControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapControlMap')"
+                            v-if="Number(activeName) === 2"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>地图控件</div>
               <div>
@@ -139,7 +141,8 @@
           </el-card>
           <!--          路线规划-->
           <el-card>
-            <AMapPathMap id="AMapPathMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapPathMap')" v-if="Number(activeName) === 2"/>
+            <AMapPathMap id="AMapPathMap" :isFullFlag="isFullFlag" @close="setFullScreen('AMapPathMap')"
+                         v-if="Number(activeName) === 2"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>路线规划</div>
               <div>
@@ -168,7 +171,8 @@
           </template>
           <!--          基础地图-->
           <el-card>
-            <QqBasicsMap id="AMapBasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('QqBasicsMap')"  v-if="Number(activeName) === 3"/>
+            <QqBasicsMap id="AMapBasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('QqBasicsMap')"
+                         v-if="Number(activeName) === 3"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>岳池县大石乡邮政银行!</div>
               <div>
@@ -180,7 +184,8 @@
           </el-card>
           <!--          地图控件-->
           <el-card>
-            <QqControlMap id="QqControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('QqControlMap')" v-if="Number(activeName) === 3"/>
+            <QqControlMap id="QqControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('QqControlMap')"
+                          v-if="Number(activeName) === 3"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>地图控件</div>
               <div>
@@ -193,11 +198,24 @@
           <!--          卫星地图-->
           <el-card>
             <QqSatelliteMap id="QqSatelliteMap" :isFullFlag="isFullFlag"
-                              @close="setFullScreen('QqSatelliteMap')" v-if="Number(activeName) === 3"/>
+                            @close="setFullScreen('QqSatelliteMap')" v-if="Number(activeName) === 3"/>
             <div style="padding: 14px" class="wl-map-hint">
               <div>卫星地图</div>
               <div>
                 <el-icon @click="setFullScreen('QqSatelliteMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
+          <!--          个性地图-->
+          <el-card>
+            <QqIndividualMap id="QqIndividualMap" :isFullFlag="isFullFlag"
+                               @close="setFullScreen('QqIndividualMap')" v-if="Number(activeName) === 3"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>个性地图</div>
+              <div>
+                <el-icon @click="setFullScreen('QqIndividualMap')">
                   <FullScreen/>
                 </el-icon>
               </div>
@@ -222,7 +240,7 @@ import AMapControlMap from "@/components/mapAttempt/amap/ControlMap.vue";
 import QqControlMap from "@/components/mapAttempt/qq/ControlMap.vue";
 import BaiDuIndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";
 import AMapIndividualMap from "@/components/mapAttempt/amap/IndividualMap.vue";
-
+import QqIndividualMap from "@/components/mapAttempt/qq/IndividualMap.vue";
 import BaiDuSatelliteMap from "@/components/mapAttempt/baidu/SatelliteMap.vue";
 import AMapSatelliteMap from "@/components/mapAttempt/amap/SatelliteMap.vue";
 import QqSatelliteMap from "@/components/mapAttempt/qq/SatelliteMap.vue";
