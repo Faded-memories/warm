@@ -36,7 +36,7 @@
           <el-icon>
             <Files/>
           </el-icon>
-          <template #title>百度地图</template>
+          <template #title>地图API</template>
         </el-menu-item>
       </el-sub-menu>
       <el-menu-item index="/echarts">

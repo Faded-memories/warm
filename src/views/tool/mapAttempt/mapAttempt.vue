@@ -166,6 +166,18 @@
             </el-icon>
             腾讯地图
           </template>
+          <!--          基础地图-->
+          <el-card>
+            <QqBasicsMap id="AMapBasicsMap" :isFullFlag="isFullFlag" @close="setFullScreen('QqBasicsMap')"  v-if="Number(activeName) === 3"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>岳池县大石乡邮政银行!</div>
+              <div>
+                <el-icon @click="setFullScreen('QqBasicsMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
         </el-collapse-item>
       </el-collapse>
     </div>
@@ -179,6 +191,7 @@ import {FullScreen, MapLocation} from "@element-plus/icons-vue";
 import screenfull from 'screenfull'
 import BaiDuBasicsMap from "@/components/mapAttempt/baidu/BasicsMap.vue";
 import AMapBasicsMap from "@/components/mapAttempt/amap/BasicsMap.vue";
+import QqBasicsMap from "@/components/mapAttempt/qq/BasicsMap.vue";
 import BaiDuControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
 import AMapControlMap from "@/components/mapAttempt/amap/ControlMap.vue";
 import BaiDuIndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";

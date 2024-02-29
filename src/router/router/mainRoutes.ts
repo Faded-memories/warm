@@ -30,7 +30,7 @@ const mainRoutes = {
             path: "/mapAttempt",
             component: defineAsyncComponent(() => import('@/views/tool/mapAttempt/mapAttempt.vue')),
             name: "mapAttempt",
-            meta: {title: '百度地图'},
+            meta: {title: '地图API'},
         },
         {
             path: "/echarts",
