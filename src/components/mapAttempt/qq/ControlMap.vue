@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- 设置放置地图的ref -->
-    <div id="qqBasicsMap" :class="[props.isFullFlag?'fullScreen':'mapBox']"/>
-    <el-icon class="close" v-if="props.isFullFlag" @click="emit('close', 'QqBasicsMap')">
+    <div id="qqControlMap" :class="[props.isFullFlag?'fullScreen':'mapBox']"/>
+    <el-icon class="close" v-if="props.isFullFlag" @click="emit('close', 'QqControlMap')">
       <CloseBold/>
     </el-icon>
   </div>
@@ -18,16 +18,13 @@ let map = null;
 
 function initMap() {
   //定义地图中心点坐标
-  let center = new TMap.LatLng(30.51658,106.513349)
   //定义map变量，调用 TMap.Map() 构造函数创建地图
-  map = new TMap.Map(document.getElementById('qqBasicsMap'), {
-    center: center,//设置地图中心点坐标
-    zoom: 17.2,   //设置地图缩放级别
+  map = new TMap.Map(document.getElementById('qqControlMap'), {
+    center: new TMap.LatLng(30.51658, 106.513349),//设置地图中心点坐标
+    zoom: 18,   //设置地图缩放级别
   });
-  map.removeControl(TMap.constants.DEFAULT_CONTROL_ID.SCALE)
-  map.removeControl(TMap.constants.DEFAULT_CONTROL_ID.ZOOM)
-  map.removeControl(TMap.constants.DEFAULT_CONTROL_ID.ROTATION)
 }
+
 onMounted(() => {
   initMap()
 });

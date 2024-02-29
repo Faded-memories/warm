@@ -178,6 +178,18 @@
               </div>
             </div>
           </el-card>
+          <!--          地图控件-->
+          <el-card>
+            <QqControlMap id="QqControlMap" :isFullFlag="isFullFlag" @close="setFullScreen('QqControlMap')" v-if="Number(activeName) === 3"/>
+            <div style="padding: 14px" class="wl-map-hint">
+              <div>地图控件</div>
+              <div>
+                <el-icon @click="setFullScreen('QqControlMap')">
+                  <FullScreen/>
+                </el-icon>
+              </div>
+            </div>
+          </el-card>
         </el-collapse-item>
       </el-collapse>
     </div>
@@ -194,6 +206,8 @@ import AMapBasicsMap from "@/components/mapAttempt/amap/BasicsMap.vue";
 import QqBasicsMap from "@/components/mapAttempt/qq/BasicsMap.vue";
 import BaiDuControlMap from "@/components/mapAttempt/baidu/ControlMap.vue";
 import AMapControlMap from "@/components/mapAttempt/amap/ControlMap.vue";
+import QqControlMap from "@/components/mapAttempt/qq/ControlMap.vue";
+
 import BaiDuIndividualMap from "@/components/mapAttempt/baidu/IndividualMap.vue";
 import AMapIndividualMap from "@/components/mapAttempt/amap/IndividualMap.vue";
 import BaiDuSatelliteMap from "@/components/mapAttempt/baidu/SatelliteMap.vue";
